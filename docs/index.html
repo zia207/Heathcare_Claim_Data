@@ -12,24 +12,25 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue:    #2563eb;
-      --blue-lt: #dbeafe;
-      --teal:    #0d9488;
-      --teal-lt: #ccfbf1;
-      --purple:  #7c3aed;
+      --blue:     #2563eb;
+      --blue-lt:  #dbeafe;
+      --teal:     #0d9488;
+      --teal-lt:  #ccfbf1;
+      --purple:   #7c3aed;
       --purple-lt:#ede9fe;
-      --amber:   #d97706;
-      --amber-lt:#fef3c7;
-      --red:     #dc2626;
-      --red-lt:  #fee2e2;
-      --slate-50: #f8fafc;
-      --slate-100:#f1f5f9;
-      --slate-200:#e2e8f0;
-      --slate-400:#94a3b8;
-      --slate-500:#64748b;
-      --slate-700:#334155;
-      --slate-800:#1e293b;
-      --slate-900:#0f172a;
+      --amber:    #d97706;
+      --amber-lt: #fef3c7;
+      --red:      #dc2626;
+      --red-lt:   #fee2e2;
+      --slate-50:  #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
     }
 
     html { scroll-behavior: smooth; }
@@ -44,33 +45,33 @@
     /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--slate-200);
       padding: 0 2rem;
       display: flex; align-items: center; justify-content: space-between;
       height: 60px;
     }
     .nav-brand {
-      font-weight: 700; font-size: .95rem; color: var(--slate-900);
-      display: flex; align-items: center; gap: .5rem;
+      font-weight: 800; font-size: .95rem; color: var(--slate-900);
+      display: flex; align-items: center; gap: .5rem; text-decoration: none;
     }
-    .nav-brand .dot { width:10px; height:10px; border-radius:50%; background:var(--blue); }
+    .nav-brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--blue); }
     .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a { text-decoration: none; font-size: .875rem; font-weight: 500; color: var(--slate-500); transition: color .2s; }
+    .nav-links a { text-decoration: none; font-size: .855rem; font-weight: 500; color: var(--slate-500); transition: color .2s; }
     .nav-links a:hover { color: var(--blue); }
     .nav-btn {
       background: var(--blue); color: #fff; text-decoration: none;
-      font-size: .8rem; font-weight: 600; padding: .4rem 1rem;
-      border-radius: 6px; transition: background .2s;
+      font-size: .8rem; font-weight: 600; padding: .42rem 1rem;
+      border-radius: 7px; transition: background .2s;
+      display: flex; align-items: center; gap: .35rem;
     }
     .nav-btn:hover { background: #1d4ed8; }
 
     /* ── HERO ── */
     .hero {
-      background: linear-gradient(135deg, var(--slate-900) 0%, #1e3a5f 60%, #0d4f4a 100%);
-      padding: 5rem 2rem 4rem;
-      text-align: center; color: #fff;
+      background: linear-gradient(135deg, var(--slate-900) 0%, #1e3a5f 55%, #0c4a46 100%);
+      padding: 5rem 2rem 4rem; text-align: center; color: #fff;
       position: relative; overflow: hidden;
     }
     .hero::before {
@@ -87,13 +88,12 @@
     }
     .hero h1 {
       font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 800; line-height: 1.15;
-      margin-bottom: 1.25rem; color: #fff;
+      font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem; color: #fff;
     }
     .hero h1 span { color: #60a5fa; }
     .hero p {
       max-width: 640px; margin: 0 auto 2rem;
-      font-size: 1.1rem; color: #cbd5e1; font-weight: 400;
+      font-size: 1.1rem; color: #cbd5e1;
     }
     .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .btn-primary {
@@ -103,7 +103,7 @@
       display: inline-flex; align-items: center; gap: .5rem;
       transition: transform .15s, background .2s;
     }
-    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
     .btn-secondary {
       background: rgba(255,255,255,.1); color: #fff; text-decoration: none;
       padding: .75rem 1.75rem; border-radius: 8px;
@@ -111,127 +111,129 @@
       display: inline-flex; align-items: center; gap: .5rem;
       transition: transform .15s, background .2s;
     }
-    .btn-secondary:hover { background: rgba(255,255,255,.18); transform: translateY(-1px); }
+    .btn-secondary:hover { background: rgba(255,255,255,.18); transform: translateY(-2px); }
     .hero-stats {
-      display: flex; justify-content: center; gap: 3rem; margin-top: 3.5rem;
-      flex-wrap: wrap;
+      display: flex; justify-content: center; gap: 3rem; margin-top: 3.5rem; flex-wrap: wrap;
     }
-    .hero-stat { text-align: center; }
     .hero-stat .num { font-size: 2rem; font-weight: 800; color: #60a5fa; }
-    .hero-stat .lbl { font-size: .8rem; color: #94a3b8; text-transform: uppercase; letter-spacing: .06em; margin-top: .2rem; }
+    .hero-stat .lbl { font-size: .78rem; color: #94a3b8; text-transform: uppercase; letter-spacing: .06em; margin-top: .2rem; }
 
-    /* ── SECTION WRAPPER ── */
+    /* ── SECTION ── */
     section { padding: 5rem 2rem; }
     .container { max-width: 1100px; margin: 0 auto; }
     .section-label {
-      font-size: .78rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .1em; color: var(--blue); margin-bottom: .6rem;
+      font-size: .75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--blue); margin-bottom: .55rem;
     }
     .section-title {
-      font-size: clamp(1.6rem, 3vw, 2.25rem);
-      font-weight: 800; color: var(--slate-900); line-height: 1.2;
-      margin-bottom: .75rem;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800; color: var(--slate-900); line-height: 1.2; margin-bottom: .7rem;
     }
-    .section-sub {
-      font-size: 1.05rem; color: var(--slate-500); max-width: 600px;
-      margin-bottom: 3rem;
-    }
+    .section-sub { font-size: 1.05rem; color: var(--slate-500); max-width: 620px; margin-bottom: 3rem; }
 
     /* ── NOTEBOOK CARDS ── */
     .notebooks { background: #fff; }
     .notebook-grid { display: grid; gap: 1.5rem; }
-    @media (min-width: 900px) { .notebook-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 768px)  { .notebook-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1050px) { .notebook-grid { grid-template-columns: repeat(4, 1fr); } }
 
     .nb-card {
-      border: 1px solid var(--slate-200); border-radius: 14px;
-      padding: 2rem; background: #fff;
-      transition: box-shadow .2s, transform .2s;
+      border: 1px solid var(--slate-200); border-radius: 16px;
+      overflow: hidden; background: #fff;
+      transition: box-shadow .25s, transform .25s;
       display: flex; flex-direction: column;
+      text-decoration: none;
     }
-    .nb-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.1); transform: translateY(-3px); }
+    .nb-card:hover { box-shadow: 0 14px 44px rgba(0,0,0,.11); transform: translateY(-4px); }
+
+    .nb-card-top {
+      padding: 1.5rem 1.5rem 1rem;
+    }
     .nb-num {
-      font-size: .7rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .1em; margin-bottom: 1rem;
-      padding: .35rem .75rem; border-radius: 100px;
-      display: inline-flex; width: fit-content;
+      font-size: .68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .1em; padding: .3rem .7rem; border-radius: 100px;
+      display: inline-flex; width: fit-content; margin-bottom: .9rem;
     }
-    .nb-card:nth-child(1) .nb-num { background: var(--blue-lt); color: var(--blue); }
-    .nb-card:nth-child(2) .nb-num { background: var(--teal-lt); color: var(--teal); }
-    .nb-card:nth-child(3) .nb-num { background: var(--purple-lt); color: var(--purple); }
-    .nb-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: .5rem; }
-    .nb-card .subtitle { font-size: .875rem; color: var(--slate-500); margin-bottom: 1.25rem; }
-    .nb-topics { list-style: none; flex: 1; }
-    .nb-topics li {
-      font-size: .83rem; color: var(--slate-600);
-      padding: .3rem 0; border-bottom: 1px solid var(--slate-100);
-      display: flex; align-items: flex-start; gap: .5rem;
+    .nb-card:nth-child(1) .nb-num { background: #f3f4f6;  color: var(--slate-700); }
+    .nb-card:nth-child(2) .nb-num { background: var(--blue-lt);   color: var(--blue);   }
+    .nb-card:nth-child(3) .nb-num { background: var(--teal-lt);   color: var(--teal);   }
+    .nb-card:nth-child(4) .nb-num { background: var(--purple-lt); color: var(--purple); }
+
+    .nb-card h3 { font-size: 1rem; font-weight: 700; color: var(--slate-900); margin-bottom: .4rem; line-height: 1.3; }
+    .nb-card .subtitle { font-size: .82rem; color: var(--slate-500); }
+
+    .nb-card-footer {
+      margin-top: auto;
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--slate-100);
+      display: flex; align-items: center; justify-content: space-between;
     }
-    .nb-topics li::before { content: '→'; color: var(--slate-400); flex-shrink: 0; }
-    .nb-link {
-      display: inline-flex; align-items: center; gap: .4rem;
-      margin-top: 1.5rem; font-size: .825rem; font-weight: 600;
-      text-decoration: none; transition: gap .2s;
+    .nb-card:nth-child(1) .nb-open { color: var(--slate-700); }
+    .nb-card:nth-child(2) .nb-open { color: var(--blue);   }
+    .nb-card:nth-child(3) .nb-open { color: var(--teal);   }
+    .nb-card:nth-child(4) .nb-open { color: var(--purple); }
+    .nb-open { font-size: .8rem; font-weight: 700; }
+    .nb-size { font-size: .72rem; color: var(--slate-400); }
+
+    /* ── ACCENT STRIP ── */
+    .nb-card:nth-child(1) { border-top: 3px solid var(--slate-400); }
+    .nb-card:nth-child(2) { border-top: 3px solid var(--blue);   }
+    .nb-card:nth-child(3) { border-top: 3px solid var(--teal);   }
+    .nb-card:nth-child(4) { border-top: 3px solid var(--purple); }
+
+    /* ── WORKFLOW IMAGE ── */
+    .workflow-section { background: var(--slate-50); }
+    .workflow-img-wrap {
+      border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--slate-200);
+      box-shadow: 0 8px 30px rgba(0,0,0,.08);
     }
-    .nb-card:nth-child(1) .nb-link { color: var(--blue); }
-    .nb-card:nth-child(2) .nb-link { color: var(--teal); }
-    .nb-card:nth-child(3) .nb-link { color: var(--purple); }
-    .nb-link:hover { gap: .7rem; }
+    .workflow-img-wrap img { width: 100%; display: block; }
 
     /* ── PIPELINE ── */
-    .pipeline { background: var(--slate-50); }
-    .pipe-steps {
-      display: flex; flex-direction: column; gap: 0;
-      max-width: 700px;
+    .pipeline { background: #fff; }
+    .pipe-grid { display: grid; gap: 1rem; }
+    @media (min-width: 700px)  { .pipe-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1050px) { .pipe-grid { grid-template-columns: repeat(4, 1fr); } }
+    .pipe-card {
+      background: var(--slate-50); border: 1px solid var(--slate-200);
+      border-radius: 12px; padding: 1.25rem;
     }
-    .pipe-step {
-      display: flex; gap: 1.25rem; align-items: flex-start;
-      padding: 1.25rem 0;
-      border-bottom: 1px dashed var(--slate-200);
+    .pipe-card .step-badge {
+      font-size: .68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--slate-400); margin-bottom: .5rem;
     }
-    .pipe-step:last-child { border-bottom: none; }
-    .pipe-icon {
-      width: 40px; height: 40px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; flex-shrink: 0; margin-top: .1rem;
-    }
-    .pipe-step:nth-child(1) .pipe-icon { background: #dbeafe; }
-    .pipe-step:nth-child(2) .pipe-icon { background: #ccfbf1; }
-    .pipe-step:nth-child(3) .pipe-icon { background: #ede9fe; }
-    .pipe-step:nth-child(4) .pipe-icon { background: #fef3c7; }
-    .pipe-step:nth-child(5) .pipe-icon { background: #fee2e2; }
-    .pipe-step:nth-child(6) .pipe-icon { background: #d1fae5; }
-    .pipe-step:nth-child(7) .pipe-icon { background: #fce7f3; }
-    .pipe-step:nth-child(8) .pipe-icon { background: #f3f4f6; }
-    .pipe-step h4 { font-size: .95rem; font-weight: 700; color: var(--slate-800); margin-bottom: .25rem; }
-    .pipe-step p  { font-size: .83rem; color: var(--slate-500); }
+    .pipe-card h4 { font-size: .9rem; font-weight: 700; color: var(--slate-800); margin-bottom: .3rem; }
+    .pipe-card p  { font-size: .8rem; color: var(--slate-500); line-height: 1.55; }
+    .pipe-icon { font-size: 1.5rem; margin-bottom: .6rem; }
 
     /* ── CONCEPTS ── */
-    .concepts { background: #fff; }
-    .concepts-grid { display: grid; gap: 1.5rem; }
-    @media (min-width: 768px) { .concepts-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1100px) { .concepts-grid { grid-template-columns: repeat(3, 1fr); } }
+    .concepts { background: var(--slate-50); }
+    .concepts-grid { display: grid; gap: 1.25rem; }
+    @media (min-width: 700px)  { .concepts-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1050px) { .concepts-grid { grid-template-columns: repeat(3, 1fr); } }
     .concept-card {
-      background: var(--slate-50); border: 1px solid var(--slate-200);
-      border-radius: 12px; padding: 1.5rem;
+      background: #fff; border: 1px solid var(--slate-200);
+      border-radius: 12px; padding: 1.4rem;
     }
-    .concept-card h4 { font-size: .9rem; font-weight: 700; color: var(--slate-800); margin-bottom: .75rem; }
+    .concept-card h4 { font-size: .875rem; font-weight: 700; color: var(--slate-800); margin-bottom: .75rem; }
     .concept-tag {
-      display: inline-block; font-size: .72rem; font-weight: 600;
-      padding: .2rem .6rem; border-radius: 100px; margin: .2rem .2rem .2rem 0;
+      display: inline-block; font-size: .71rem; font-weight: 600;
+      padding: .2rem .6rem; border-radius: 100px; margin: .2rem .15rem .2rem 0;
     }
-    .tag-blue   { background: var(--blue-lt);   color: var(--blue);   }
-    .tag-teal   { background: var(--teal-lt);   color: var(--teal);   }
-    .tag-purple { background: var(--purple-lt); color: var(--purple); }
-    .tag-amber  { background: var(--amber-lt);  color: var(--amber);  }
-    .tag-red    { background: var(--red-lt);    color: var(--red);    }
+    .tag-blue   { background: var(--blue-lt);   color: #1e40af; }
+    .tag-teal   { background: var(--teal-lt);   color: #065f46; }
+    .tag-purple { background: var(--purple-lt); color: #5b21b6; }
+    .tag-amber  { background: var(--amber-lt);  color: #92400e; }
+    .tag-red    { background: var(--red-lt);    color: #991b1b; }
     .tag-slate  { background: var(--slate-200); color: var(--slate-700); }
 
-    /* ── CODE SNIPPET ── */
-    .code-section { background: var(--slate-900); color: #e2e8f0; }
+    /* ── CODE ── */
+    .code-section { background: var(--slate-900); }
     .code-section .section-label { color: #60a5fa; }
     .code-section .section-title { color: #f1f5f9; }
     .code-section .section-sub   { color: var(--slate-400); }
-    .code-grid { display: grid; gap: 1.5rem; }
+    .code-grid { display: grid; gap: 1.25rem; }
     @media (min-width: 900px) { .code-grid { grid-template-columns: repeat(2, 1fr); } }
     .code-block {
       background: #0f172a; border: 1px solid #1e293b;
@@ -239,70 +241,77 @@
     }
     .code-header {
       display: flex; align-items: center; justify-content: space-between;
-      padding: .75rem 1.25rem;
+      padding: .65rem 1.1rem;
       background: #1e293b; border-bottom: 1px solid #334155;
     }
     .code-dots { display: flex; gap: .4rem; }
-    .code-dots span {
-      width: 10px; height: 10px; border-radius: 50%;
-    }
+    .code-dots span { width: 10px; height: 10px; border-radius: 50%; }
     .code-dots span:nth-child(1) { background: #ef4444; }
     .code-dots span:nth-child(2) { background: #f59e0b; }
     .code-dots span:nth-child(3) { background: #22c55e; }
-    .code-filename { font-size: .72rem; color: var(--slate-400); font-family: 'JetBrains Mono', monospace; }
+    .code-filename { font-size: .7rem; color: var(--slate-400); font-family: 'JetBrains Mono', monospace; }
     pre {
-      padding: 1.25rem;
+      padding: 1.1rem 1.25rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: .78rem; line-height: 1.7; overflow-x: auto;
+      font-size: .77rem; line-height: 1.75; overflow-x: auto; color: #e2e8f0;
     }
-    .kw  { color: #c084fc; }  /* keyword */
-    .fn  { color: #60a5fa; }  /* function */
-    .st  { color: #86efac; }  /* string */
-    .cm  { color: #475569; }  /* comment */
-    .nm  { color: #f59e0b; }  /* number */
-    .bi  { color: #38bdf8; }  /* built-in */
+    .kw { color: #c084fc; } .fn { color: #60a5fa; }
+    .st { color: #86efac; } .cm { color: #475569; }
+    .nm { color: #f59e0b; } .bi { color: #38bdf8; }
 
     /* ── KPI ── */
-    .kpi-section { background: var(--slate-50); }
+    .kpi-section { background: #fff; }
     .kpi-grid { display: grid; gap: 1rem; }
     @media (min-width: 600px)  { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 1000px) { .kpi-grid { grid-template-columns: repeat(4, 1fr); } }
     .kpi-card {
-      background: #fff; border: 1px solid var(--slate-200);
+      background: var(--slate-50); border: 1px solid var(--slate-200);
       border-radius: 12px; padding: 1.5rem; text-align: center;
     }
-    .kpi-val { font-size: 1.9rem; font-weight: 800; color: var(--slate-900); }
-    .kpi-lbl { font-size: .8rem; color: var(--slate-500); margin-top: .3rem; }
+    .kpi-val { font-size: 1.85rem; font-weight: 800; color: var(--slate-900); }
+    .kpi-lbl { font-size: .78rem; color: var(--slate-500); margin-top: .3rem; }
     .kpi-badge {
-      display: inline-block; font-size: .7rem; font-weight: 700;
+      display: inline-block; font-size: .69rem; font-weight: 700;
       padding: .2rem .6rem; border-radius: 100px; margin-top: .5rem;
     }
     .badge-green  { background: #d1fae5; color: #065f46; }
     .badge-orange { background: var(--amber-lt); color: #92400e; }
-    .badge-blue   { background: var(--blue-lt); color: #1e40af; }
-    .badge-red    { background: var(--red-lt); color: #991b1b; }
+    .badge-blue   { background: var(--blue-lt);  color: #1e40af; }
+    .badge-red    { background: var(--red-lt);   color: #991b1b; }
 
-    /* ── GETTING STARTED ── */
-    .getting-started { background: linear-gradient(135deg, #1e3a5f 0%, #0d4f4a 100%); color: #fff; }
+    /* ── DASHBOARD PREVIEW ── */
+    .dashboard-section { background: var(--slate-900); }
+    .dashboard-section .section-label { color: #60a5fa; }
+    .dashboard-section .section-title { color: #f1f5f9; }
+    .dashboard-section .section-sub   { color: var(--slate-400); }
+    .dashboard-img-wrap {
+      border-radius: 14px; overflow: hidden;
+      border: 1px solid #1e293b;
+      box-shadow: 0 12px 50px rgba(0,0,0,.5);
+    }
+    .dashboard-img-wrap img { width: 100%; display: block; }
+
+    /* ── GET STARTED ── */
+    .getting-started { background: linear-gradient(135deg, #1e3a5f 0%, #0c4a46 100%); }
     .getting-started .section-label { color: #93c5fd; }
     .getting-started .section-title { color: #fff; }
     .getting-started .section-sub   { color: #94a3b8; }
-    .steps-list { display: flex; flex-direction: column; gap: 1rem; max-width: 680px; }
+    .steps-list { display: flex; flex-direction: column; gap: .9rem; max-width: 680px; }
     .step-item {
       display: flex; gap: 1rem; align-items: flex-start;
       background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
-      border-radius: 10px; padding: 1.1rem 1.25rem;
+      border-radius: 10px; padding: 1rem 1.25rem;
     }
     .step-num {
       width: 28px; height: 28px; border-radius: 50%;
       background: var(--blue); color: #fff;
       display: flex; align-items: center; justify-content: center;
-      font-size: .78rem; font-weight: 700; flex-shrink: 0;
+      font-size: .77rem; font-weight: 700; flex-shrink: 0;
     }
-    .step-item h4 { font-size: .9rem; font-weight: 600; color: #f1f5f9; margin-bottom: .25rem; }
+    .step-item h4 { font-size: .88rem; font-weight: 600; color: #f1f5f9; margin-bottom: .2rem; }
     .step-item code {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .78rem; color: #86efac;
+      font-size: .77rem; color: #86efac;
       background: rgba(0,0,0,.3); padding: .15rem .45rem; border-radius: 4px;
     }
 
@@ -318,7 +327,6 @@
     .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; flex-wrap: wrap; }
     .footer-note { color: var(--slate-600); margin-top: .5rem; }
 
-    /* ── RESPONSIVE NAV ── */
     @media (max-width: 640px) {
       .nav-links { display: none; }
       .hero { padding: 3.5rem 1.5rem 3rem; }
@@ -330,18 +338,16 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">
-    <div class="dot"></div>
-    Healthcare Claims DS
-  </div>
+  <a href="#" class="nav-brand"><div class="dot"></div> Healthcare Claims DS</a>
   <ul class="nav-links">
     <li><a href="#notebooks">Notebooks</a></li>
     <li><a href="#pipeline">Pipeline</a></li>
     <li><a href="#concepts">Concepts</a></li>
+    <li><a href="#dashboard">Dashboard</a></li>
     <li><a href="#start">Get Started</a></li>
   </ul>
   <a href="https://github.com/zia207/Heathcare_Claim_Data" class="nav-btn" target="_blank" rel="noopener">
-    ★ GitHub
+    ★ &nbsp;GitHub
   </a>
 </nav>
 
@@ -355,11 +361,11 @@
     Advantage and value-based care programs.
   </p>
   <div class="hero-actions">
-    <a href="#notebooks" class="btn-primary">Explore Notebooks →</a>
+    <a href="00_tutorial_index.html" class="btn-primary">Browse Tutorial Index →</a>
     <a href="https://github.com/zia207/Heathcare_Claim_Data" class="btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="num">3</div><div class="lbl">Notebooks</div></div>
+    <div class="hero-stat"><div class="num">4</div><div class="lbl">Notebooks</div></div>
     <div class="hero-stat"><div class="num">2,000</div><div class="lbl">Simulated Members</div></div>
     <div class="hero-stat"><div class="num">12k+</div><div class="lbl">Simulated Claims</div></div>
     <div class="hero-stat"><div class="num">8</div><div class="lbl">Pipeline Steps</div></div>
@@ -369,142 +375,131 @@
 <!-- NOTEBOOKS -->
 <section class="notebooks" id="notebooks">
   <div class="container">
-    <div class="section-label">Tutorial Structure</div>
-    <h2 class="section-title">Three notebooks, one complete journey</h2>
-    <p class="section-sub">Work through the notebooks in order — each builds on the last to take you from foundations to a production-grade analytics pipeline.</p>
+    <div class="section-label">Tutorial Notebooks</div>
+    <h2 class="section-title">Four notebooks — fully rendered &amp; interactive</h2>
+    <p class="section-sub">Click any card to open the full, rendered HTML notebook right in your browser. No Jupyter required.</p>
 
     <div class="notebook-grid">
 
-      <!-- Part 1 -->
-      <div class="nb-card">
-        <span class="nb-num">Part 1 · Foundations</span>
-        <h3>Patient Classification Tools</h3>
-        <p class="subtitle">Every major classification system used in US healthcare — with Python implementations.</p>
-        <ul class="nb-topics">
-          <li>What claim data is and how it flows</li>
-          <li>ICD-10, DRG/MS-DRG, HCC coding</li>
-          <li>CPT, HCPCS, ICD-10-PCS procedures</li>
-          <li>APR-DRG severity &amp; acuity scoring</li>
-          <li>Charlson Comorbidity Index (CCI)</li>
-          <li>LACE 30-day readmission risk index</li>
-          <li>RBRVS relative value units</li>
-          <li>DSM-5 &amp; mental health classification</li>
-        </ul>
-        <a href="https://github.com/zia207/Heathcare_Claim_Data/blob/main/01_patient_classification_tools.ipynb"
-           class="nb-link" target="_blank" rel="noopener">
-          Open notebook →
-        </a>
-      </div>
+      <a class="nb-card" href="00_tutorial_index.html">
+        <div class="nb-card-top">
+          <span class="nb-num">Index</span>
+          <h3>Tutorial Index &amp; Overview</h3>
+          <p class="subtitle">Start here — a structured map of the entire tutorial series with learning objectives and navigation.</p>
+        </div>
+        <div class="nb-card-footer">
+          <span class="nb-open">Open notebook →</span>
+          <span class="nb-size">00_tutorial_index</span>
+        </div>
+      </a>
 
-      <!-- Part 2 -->
-      <div class="nb-card">
-        <span class="nb-num">Part 2 · DS Role</span>
-        <h3>Data Scientist Responsibilities</h3>
-        <p class="subtitle">A comprehensive reference mapping the full scope of a healthcare data scientist's role.</p>
-        <ul class="nb-topics">
-          <li>Data acquisition, cleaning &amp; validation</li>
-          <li>HCC mapping &amp; DRG grouping</li>
-          <li>Disease registry construction</li>
-          <li>Prospective financial risk models</li>
-          <li>Stop-loss &amp; reinsurance analytics</li>
-          <li>ACO attribution &amp; HEDIS measures</li>
-          <li>NLP on clinical notes</li>
-          <li>Executive dashboards &amp; reporting</li>
-        </ul>
-        <a href="https://github.com/zia207/Heathcare_Claim_Data/blob/main/02_ds_responsibilities_claims_classification.ipynb"
-           class="nb-link" target="_blank" rel="noopener">
-          Open notebook →
-        </a>
-      </div>
+      <a class="nb-card" href="01_patient_classification_tools.html">
+        <div class="nb-card-top">
+          <span class="nb-num">Part 1 · Foundations</span>
+          <h3>Patient Classification Tools</h3>
+          <p class="subtitle">Every major classification system used in US healthcare — ICD-10, HCC, DRG, LACE, CCI — with Python implementations.</p>
+        </div>
+        <div class="nb-card-footer">
+          <span class="nb-open">Open notebook →</span>
+          <span class="nb-size">01_patient_classification_tools</span>
+        </div>
+      </a>
 
-      <!-- Part 3 -->
-      <div class="nb-card">
-        <span class="nb-num">Part 3 · Full Pipeline</span>
-        <h3>End-to-End Claims Workflow</h3>
-        <p class="subtitle">Fully executable pipeline: 2,000 members · 12,000 claims · 3 ML models · 12-panel dashboard.</p>
-        <ul class="nb-topics">
-          <li>Realistic data simulation with QA issues</li>
-          <li>Deduplication, imputation &amp; validation</li>
-          <li>PMPM, HCC, CCI feature engineering</li>
-          <li>4-tier risk stratification</li>
-          <li>Linear Regression, RF &amp; GBM models</li>
-          <li>ACO shared savings calculation</li>
-          <li>HEDIS-like quality measures</li>
-          <li>12-panel executive dashboard</li>
-        </ul>
-        <a href="https://github.com/zia207/Heathcare_Claim_Data/blob/main/03_healthcare_claims_workflow.ipynb"
-           class="nb-link" target="_blank" rel="noopener">
-          Open notebook →
-        </a>
-      </div>
+      <a class="nb-card" href="02_ds_responsibilities_claims_classification.html">
+        <div class="nb-card-top">
+          <span class="nb-num">Part 2 · DS Role</span>
+          <h3>Data Scientist Responsibilities</h3>
+          <p class="subtitle">A comprehensive reference mapping the full scope of a healthcare data scientist's role, from raw data to executive reporting.</p>
+        </div>
+        <div class="nb-card-footer">
+          <span class="nb-open">Open notebook →</span>
+          <span class="nb-size">02_ds_responsibilities</span>
+        </div>
+      </a>
+
+      <a class="nb-card" href="03_healthcare_claims_workflow.html">
+        <div class="nb-card-top">
+          <span class="nb-num">Part 3 · Full Pipeline</span>
+          <h3>End-to-End Claims Workflow</h3>
+          <p class="subtitle">Fully executable 8-step pipeline: 2,000 members · 12,000 claims · 3 ML models · 12-panel executive dashboard.</p>
+        </div>
+        <div class="nb-card-footer">
+          <span class="nb-open">Open notebook →</span>
+          <span class="nb-size">03_healthcare_claims_workflow</span>
+        </div>
+      </a>
 
     </div>
   </div>
 </section>
 
-<!-- PIPELINE -->
+<!-- WORKFLOW DIAGRAM -->
+<section class="workflow-section">
+  <div class="container">
+    <div class="section-label">Architecture</div>
+    <h2 class="section-title">Data science workflow at a glance</h2>
+    <p class="section-sub">The full pipeline from raw claims data to actionable insights and executive reporting.</p>
+    <div class="workflow-img-wrap">
+      <img src="workflow_diagram.png" alt="Healthcare Claims Data Science Workflow Diagram" />
+    </div>
+  </div>
+</section>
+
+<!-- PIPELINE STEPS -->
 <section class="pipeline" id="pipeline">
   <div class="container">
     <div class="section-label">Part 3 Deep Dive</div>
     <h2 class="section-title">8-step analytics pipeline</h2>
     <p class="section-sub">Every step of the end-to-end workflow, from raw synthetic data to actionable executive insights.</p>
 
-    <div class="pipe-steps">
-      <div class="pipe-step">
+    <div class="pipe-grid">
+      <div class="pipe-card">
         <div class="pipe-icon">🔬</div>
-        <div>
-          <h4>Step 0 — Data Simulation</h4>
-          <p>Generate 2,000 member eligibility records &amp; 12,000+ service-level claims with injected duplicates, missing values, and financial anomalies to mimic real-world messiness.</p>
-        </div>
+        <div class="step-badge">Step 0</div>
+        <h4>Data Simulation</h4>
+        <p>Generate 2,000 member records &amp; 12,000+ claims with injected duplicates, missing values, and financial anomalies.</p>
       </div>
-      <div class="pipe-step">
+      <div class="pipe-card">
         <div class="pipe-icon">🧹</div>
-        <div>
-          <h4>Step 1 — Data Cleaning</h4>
-          <p>Deduplication, active-status filtering, age/gender imputation, and financial validation (paid ≤ allowed). Log all changes for audit trail.</p>
-        </div>
+        <div class="step-badge">Step 1</div>
+        <h4>Data Cleaning</h4>
+        <p>Deduplication, active-status filtering, age/gender imputation, and financial validation with full audit logging.</p>
       </div>
-      <div class="pipe-step">
+      <div class="pipe-card">
         <div class="pipe-icon">⚙️</div>
-        <div>
-          <h4>Step 2 — Feature Engineering</h4>
-          <p>Compute PMPM cost, HCC risk score, Charlson CCI, utilization metrics (ER rate, inpatient admits), and age-band categorical features.</p>
-        </div>
+        <div class="step-badge">Step 2</div>
+        <h4>Feature Engineering</h4>
+        <p>Compute PMPM cost, HCC risk score, Charlson CCI, utilization metrics, and age-band categorical features.</p>
       </div>
-      <div class="pipe-step">
+      <div class="pipe-card">
         <div class="pipe-icon">🏷️</div>
-        <div>
-          <h4>Step 3 — Patient Classification</h4>
-          <p>Assign each member to a 4-tier risk tier (Low / Moderate / High / Critical) and build chronic-disease registries (diabetes, CHF, COPD, CKD).</p>
-        </div>
+        <div class="step-badge">Step 3</div>
+        <h4>Patient Classification</h4>
+        <p>4-tier risk stratification (Low / Moderate / High / Critical) and chronic-disease registries (diabetes, CHF, COPD, CKD).</p>
       </div>
-      <div class="pipe-step">
+      <div class="pipe-card">
         <div class="pipe-icon">📊</div>
-        <div>
-          <h4>Step 4 — Financial Risk Models</h4>
-          <p>Train and compare Linear Regression, Random Forest, and Gradient Boosting on prospective PMPM cost prediction. Best model R² ≈ 0.74.</p>
-        </div>
+        <div class="step-badge">Step 4</div>
+        <h4>Financial Risk Models</h4>
+        <p>Train and compare Linear Regression, Random Forest, and Gradient Boosting on prospective PMPM cost. Best R² ≈ 0.74.</p>
       </div>
-      <div class="pipe-step">
+      <div class="pipe-card">
         <div class="pipe-icon">🤝</div>
-        <div>
-          <h4>Step 5 — Value-Based Care Analytics</h4>
-          <p>ACO provider attribution, risk-adjusted benchmark spend, shared savings/loss calculation, and MLR reporting.</p>
-        </div>
+        <div class="step-badge">Step 5</div>
+        <h4>Value-Based Care Analytics</h4>
+        <p>ACO attribution, risk-adjusted benchmark spend, shared savings/loss calculation, and MLR reporting.</p>
       </div>
-      <div class="pipe-step">
+      <div class="pipe-card">
         <div class="pipe-icon">✅</div>
-        <div>
-          <h4>Step 6 — Quality Measures</h4>
-          <p>HEDIS-like measures: HbA1c testing, mammography screening, HTN medication adherence, and 30-day all-cause readmission rate.</p>
-        </div>
+        <div class="step-badge">Step 6</div>
+        <h4>Quality Measures</h4>
+        <p>HEDIS-like measures: HbA1c testing, mammography screening, HTN medication adherence, and 30-day readmission rate.</p>
       </div>
-      <div class="pipe-step">
+      <div class="pipe-card">
         <div class="pipe-icon">📈</div>
-        <div>
-          <h4>Steps 7–8 — Dashboard &amp; Insights</h4>
-          <p>12-panel matplotlib executive dashboard plus a structured KPI summary report with actionable leadership-ready insights.</p>
-        </div>
+        <div class="step-badge">Steps 7–8</div>
+        <h4>Dashboard &amp; Insights</h4>
+        <p>12-panel matplotlib executive dashboard plus a structured KPI summary report with leadership-ready insights.</p>
       </div>
     </div>
   </div>
@@ -515,7 +510,7 @@
   <div class="container">
     <div class="section-label">Key Concepts</div>
     <h2 class="section-title">What you will learn</h2>
-    <p class="section-sub">Healthcare data science sits at the intersection of clinical coding, actuarial math, and ML. This tutorial covers all three.</p>
+    <p class="section-sub">Healthcare data science sits at the intersection of clinical coding, actuarial math, and machine learning. This tutorial covers all three.</p>
 
     <div class="concepts-grid">
       <div class="concept-card">
@@ -529,7 +524,6 @@
         <span class="concept-tag tag-blue">APC</span>
         <span class="concept-tag tag-blue">ICD-10-PCS</span>
       </div>
-
       <div class="concept-card">
         <h4>Actuarial &amp; Risk Metrics</h4>
         <span class="concept-tag tag-teal">PMPM</span>
@@ -540,7 +534,6 @@
         <span class="concept-tag tag-teal">Stop-Loss</span>
         <span class="concept-tag tag-teal">Capitation</span>
       </div>
-
       <div class="concept-card">
         <h4>Value-Based Care Programs</h4>
         <span class="concept-tag tag-purple">ACO</span>
@@ -550,7 +543,6 @@
         <span class="concept-tag tag-purple">Shared Savings</span>
         <span class="concept-tag tag-purple">Attribution Models</span>
       </div>
-
       <div class="concept-card">
         <h4>Machine Learning</h4>
         <span class="concept-tag tag-amber">Linear Regression</span>
@@ -559,7 +551,6 @@
         <span class="concept-tag tag-amber">Readmission Prediction</span>
         <span class="concept-tag tag-amber">Risk Stratification</span>
       </div>
-
       <div class="concept-card">
         <h4>Severity &amp; Post-Acute Tools</h4>
         <span class="concept-tag tag-red">APACHE / SOFA</span>
@@ -567,10 +558,8 @@
         <span class="concept-tag tag-red">RUG / PDPM</span>
         <span class="concept-tag tag-red">OASIS</span>
         <span class="concept-tag tag-red">DSM-5 / GAF</span>
-        <span class="concept-tag tag-red">ACG</span>
         <span class="concept-tag tag-red">RBRVS</span>
       </div>
-
       <div class="concept-card">
         <h4>Python Tools &amp; Libraries</h4>
         <span class="concept-tag tag-slate">pandas</span>
@@ -589,30 +578,27 @@
   <div class="container">
     <div class="section-label">Code Highlights</div>
     <h2 class="section-title">Hands-on Python from day one</h2>
-    <p class="section-sub">Every concept is paired with runnable Python. No toy examples — real healthcare algorithms.</p>
+    <p class="section-sub">Every concept is paired with runnable Python — real healthcare algorithms, not toy examples.</p>
 
     <div class="code-grid">
-
       <div class="code-block">
         <div class="code-header">
           <div class="code-dots"><span></span><span></span><span></span></div>
           <span class="code-filename">charlson_comorbidity_index.py</span>
         </div>
         <pre><span class="cm"># Charlson Comorbidity Index (CCI)</span>
-<span class="cm"># Predicts 10-year mortality from ICD-10</span>
-
 <span class="kw">def</span> <span class="fn">calculate_cci</span>(diagnoses: <span class="bi">list</span>[<span class="bi">str</span>]) -> <span class="bi">int</span>:
     weights = {
-        <span class="st">"MI"</span>: (<span class="nm">1</span>, [<span class="st">"I21"</span>, <span class="st">"I22"</span>, <span class="st">"I252"</span>]),
-        <span class="st">"CHF"</span>: (<span class="nm">1</span>, [<span class="st">"I099"</span>, <span class="st">"I11"</span>, <span class="st">"I50"</span>]),
-        <span class="st">"Diabetes"</span>: (<span class="nm">1</span>, [<span class="st">"E10"</span>, <span class="st">"E11"</span>, <span class="st">"E13"</span>]),
-        <span class="st">"Renal"</span>: (<span class="nm">2</span>, [<span class="st">"N18"</span>, <span class="st">"N19"</span>]),
-        <span class="st">"Malignancy"</span>: (<span class="nm">2</span>, [<span class="st">"C"</span>]),
-        <span class="st">"Metastatic"</span>: (<span class="nm">6</span>, [<span class="st">"C77"</span>, <span class="st">"C78"</span>, <span class="st">"C79"</span>]),
-        <span class="st">"AIDS"</span>: (<span class="nm">6</span>, [<span class="st">"B20"</span>, <span class="st">"B21"</span>, <span class="st">"B22"</span>]),
+        <span class="st">"MI"</span>:          (<span class="nm">1</span>, [<span class="st">"I21"</span>, <span class="st">"I22"</span>]),
+        <span class="st">"CHF"</span>:         (<span class="nm">1</span>, [<span class="st">"I099"</span>, <span class="st">"I50"</span>]),
+        <span class="st">"Diabetes"</span>:    (<span class="nm">1</span>, [<span class="st">"E10"</span>, <span class="st">"E11"</span>]),
+        <span class="st">"Renal"</span>:       (<span class="nm">2</span>, [<span class="st">"N18"</span>, <span class="st">"N19"</span>]),
+        <span class="st">"Malignancy"</span>:  (<span class="nm">2</span>, [<span class="st">"C"</span>]),
+        <span class="st">"Metastatic"</span>:  (<span class="nm">6</span>, [<span class="st">"C77"</span>,<span class="st">"C78"</span>]),
+        <span class="st">"AIDS"</span>:        (<span class="nm">6</span>, [<span class="st">"B20"</span>, <span class="st">"B21"</span>]),
     }
     score = <span class="nm">0</span>
-    <span class="kw">for</span> condition, (wt, codes) <span class="kw">in</span> weights.items():
+    <span class="kw">for</span> _, (wt, codes) <span class="kw">in</span> weights.items():
         <span class="kw">if</span> <span class="bi">any</span>(d.startswith(<span class="bi">tuple</span>(codes))
                <span class="kw">for</span> d <span class="kw">in</span> diagnoses):
             score += wt
@@ -625,23 +611,18 @@
           <span class="code-filename">lace_index.py</span>
         </div>
         <pre><span class="cm"># LACE Index — 30-day readmission risk</span>
-<span class="cm"># L: length of stay  A: acuity  C: CCI</span>
-<span class="cm"># E: ER visits in prior 6 months</span>
-
 <span class="kw">def</span> <span class="fn">calculate_lace</span>(
-    los: <span class="bi">int</span>,
-    acuity: <span class="bi">int</span>,   <span class="cm"># 0=elective, 1=urgent</span>
-    cci: <span class="bi">int</span>,
-    er_visits: <span class="bi">int</span>
-) -> <span class="bi">int</span>:
-    l_score = <span class="bi">min</span>(los, <span class="nm">7</span>)       <span class="cm"># 0–7</span>
-    a_score = acuity * <span class="nm">3</span>          <span class="cm"># 0 or 3</span>
-    c_score = <span class="bi">min</span>(cci, <span class="nm">5</span>)        <span class="cm"># 0–5</span>
-    e_score = <span class="bi">min</span>(er_visits, <span class="nm">4</span>)  <span class="cm"># 0–4</span>
-    lace = l_score + a_score + c_score + e_score
-    risk = (<span class="st">"High"</span> <span class="kw">if</span> lace >= <span class="nm">10</span>
-            <span class="kw">else</span> <span class="st">"Moderate"</span> <span class="kw">if</span> lace >= <span class="nm">5</span>
-            <span class="kw">else</span> <span class="st">"Low"</span>)
+    los: <span class="bi">int</span>, acuity: <span class="bi">int</span>,
+    cci: <span class="bi">int</span>, er_visits: <span class="bi">int</span>
+) -> <span class="bi">tuple</span>:
+    l = <span class="bi">min</span>(los, <span class="nm">7</span>)
+    a = acuity * <span class="nm">3</span>
+    c = <span class="bi">min</span>(cci, <span class="nm">5</span>)
+    e = <span class="bi">min</span>(er_visits, <span class="nm">4</span>)
+    lace = l + a + c + e
+    risk = (<span class="st">"High"</span>     <span class="kw">if</span> lace >= <span class="nm">10</span> <span class="kw">else</span>
+            <span class="st">"Moderate"</span> <span class="kw">if</span> lace >= <span class="nm">5</span>  <span class="kw">else</span>
+            <span class="st">"Low"</span>)
     <span class="kw">return</span> lace, risk</pre>
       </div>
 
@@ -658,18 +639,15 @@
 
 models = {
     <span class="st">"Linear Regression"</span>: LinearRegression(),
-    <span class="st">"Random Forest"</span>: RandomForestRegressor(
-        n_estimators=<span class="nm">100</span>, max_depth=<span class="nm">6</span>
-    ),
-    <span class="st">"Gradient Boosting"</span>: GradientBoostingRegressor(
-        n_estimators=<span class="nm">150</span>, learning_rate=<span class="nm">0.05</span>
-    ),
+    <span class="st">"Random Forest"</span>:
+        RandomForestRegressor(n_estimators=<span class="nm">100</span>),
+    <span class="st">"Gradient Boosting"</span>:
+        GradientBoostingRegressor(
+            n_estimators=<span class="nm">150</span>, learning_rate=<span class="nm">0.05</span>),
 }
-
-<span class="kw">for</span> name, model <span class="kw">in</span> models.items():
-    model.fit(X_train, y_train)
-    r2 = model.score(X_test, y_test)
-    <span class="bi">print</span>(<span class="st">f"</span>{name}<span class="st">  R²=</span>{r2:.3f}<span class="st">"</span>)</pre>
+<span class="kw">for</span> name, m <span class="kw">in</span> models.items():
+    m.fit(X_train, y_train)
+    <span class="bi">print</span>(<span class="st">f"</span>{name}<span class="st"> R²=</span>{m.score(X_test,y_test):.3f}<span class="st">"</span>)</pre>
       </div>
 
       <div class="code-block">
@@ -678,28 +656,22 @@ models = {
           <span class="code-filename">aco_shared_savings.py</span>
         </div>
         <pre><span class="cm"># ACO Shared Savings Calculation</span>
-
 <span class="kw">def</span> <span class="fn">calc_shared_savings</span>(
     actual_pmpm, benchmark_pmpm, members
 ):
-    actual_total = actual_pmpm * members * <span class="nm">12</span>
-    bench_total  = benchmark_pmpm * members * <span class="nm">12</span>
-    savings = bench_total - actual_total
+    actual = actual_pmpm * members * <span class="nm">12</span>
+    bench  = benchmark_pmpm * members * <span class="nm">12</span>
+    savings = bench - actual
 
-    <span class="kw">if</span> savings > <span class="nm">0</span>:
-        aco_share = savings * <span class="nm">0.60</span>
-        result = <span class="st">"Shared Savings"</span>
-    <span class="kw">else</span>:
-        aco_share = savings * <span class="nm">0.40</span>
-        result = <span class="st">"Shared Loss"</span>
-
+    share = <span class="nm">0.60</span> <span class="kw">if</span> savings > <span class="nm">0</span> <span class="kw">else</span> <span class="nm">0.40</span>
+    label = (<span class="st">"Shared Savings"</span> <span class="kw">if</span> savings > <span class="nm">0</span>
+             <span class="kw">else</span> <span class="st">"Shared Loss"</span>)
     <span class="kw">return</span> {
-        <span class="st">"result"</span>: result,
-        <span class="st">"gross_savings"</span>: savings,
-        <span class="st">"aco_share"</span>: aco_share
+        <span class="st">"result"</span>: label,
+        <span class="st">"gross"</span>: savings,
+        <span class="st">"aco_share"</span>: savings * share
     }</pre>
       </div>
-
     </div>
   </div>
 </section>
@@ -707,10 +679,9 @@ models = {
 <!-- KPI OUTPUT -->
 <section class="kpi-section">
   <div class="container">
-    <div class="section-label">Sample Output</div>
-    <h2 class="section-title">Plan KPI summary — what the pipeline produces</h2>
-    <p class="section-sub">After running all 8 steps, the notebook generates an executive-ready KPI report like this one.</p>
-
+    <div class="section-label">Sample Output — Part 3</div>
+    <h2 class="section-title">Plan KPI summary</h2>
+    <p class="section-sub">After running all 8 steps, the notebook generates an executive-ready KPI report.</p>
     <div class="kpi-grid">
       <div class="kpi-card">
         <div class="kpi-val">1,847</div>
@@ -720,7 +691,7 @@ models = {
       <div class="kpi-card">
         <div class="kpi-val">$498</div>
         <div class="kpi-lbl">Average PMPM Cost</div>
-        <span class="kpi-badge badge-orange">Per member/month</span>
+        <span class="kpi-badge badge-orange">Per member / month</span>
       </div>
       <div class="kpi-card">
         <div class="kpi-val">1.082</div>
@@ -756,13 +727,24 @@ models = {
   </div>
 </section>
 
-<!-- GETTING STARTED -->
+<!-- DASHBOARD PREVIEW -->
+<section class="dashboard-section" id="dashboard">
+  <div class="container">
+    <div class="section-label">Executive Dashboard — Part 3 Output</div>
+    <h2 class="section-title">12-panel matplotlib dashboard</h2>
+    <p class="section-sub">The pipeline culminates in a publication-ready executive dashboard covering cost, risk, quality, and financial performance.</p>
+    <div class="dashboard-img-wrap">
+      <img src="healthcare_claims_dashboard.png" alt="12-panel Healthcare Claims Executive Dashboard" />
+    </div>
+  </div>
+</section>
+
+<!-- GET STARTED -->
 <section class="getting-started" id="start">
   <div class="container">
     <div class="section-label">Get Started</div>
     <h2 class="section-title">Up and running in four steps</h2>
     <p class="section-sub">All data is fully synthetic — no PHI, no HIPAA concerns. Just clone and run.</p>
-
     <div class="steps-list">
       <div class="step-item">
         <div class="step-num">1</div>
@@ -788,8 +770,8 @@ models = {
       <div class="step-item">
         <div class="step-num">4</div>
         <div>
-          <h4>Launch Jupyter and open Part 1</h4>
-          <code>jupyter notebook</code>
+          <h4>Launch Jupyter and start with the index</h4>
+          <code>jupyter notebook 00_tutorial_index.ipynb</code>
         </div>
       </div>
     </div>
@@ -801,11 +783,12 @@ models = {
   <div class="footer-inner">
     <div class="footer-links">
       <a href="https://github.com/zia207/Heathcare_Claim_Data" target="_blank" rel="noopener">GitHub Repository</a>
-      <a href="https://github.com/zia207/Heathcare_Claim_Data/blob/main/01_patient_classification_tools.ipynb" target="_blank" rel="noopener">Part 1 — Foundations</a>
-      <a href="https://github.com/zia207/Heathcare_Claim_Data/blob/main/02_ds_responsibilities_claims_classification.ipynb" target="_blank" rel="noopener">Part 2 — DS Role</a>
-      <a href="https://github.com/zia207/Heathcare_Claim_Data/blob/main/03_healthcare_claims_workflow.ipynb" target="_blank" rel="noopener">Part 3 — Pipeline</a>
+      <a href="00_tutorial_index.html">Tutorial Index</a>
+      <a href="01_patient_classification_tools.html">Part 1 — Foundations</a>
+      <a href="02_ds_responsibilities_claims_classification.html">Part 2 — DS Role</a>
+      <a href="03_healthcare_claims_workflow.html">Part 3 — Pipeline</a>
     </div>
-    <p>Built with Python · pandas · scikit-learn · matplotlib</p>
+    <p>Built with Python · pandas · scikit-learn · matplotlib · jupyter nbconvert</p>
     <p class="footer-note">All data in this tutorial is synthetically generated. No real patient information is used.</p>
   </div>
 </footer>
